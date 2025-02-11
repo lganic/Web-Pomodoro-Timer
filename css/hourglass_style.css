@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Font7';
+    src: url('/fonts/Seven Segment.ttf') format('truetype'); 
+    font-weight: bold; 
+    font-style: normal; 
+}
+
+/* Container for the hourglass */
+.hourglass {
+
+    height: 50vh;
+    aspect-ratio: 1/2;
+
+    /* width: 100px;
+    height: 200px; */
+    /* Ensure height to center rotation */
+    margin: 0px auto;
+    position: relative;
+    transform-origin: center center;
+    /* Set rotation point to center */
+    transition: transform 1s ease-in-out;
+}
+
+/* Timer text below the hourglass */
+.timer-display {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    font-family: 'Font7', sans-serif;
+    color: #d6d6d6;
+}
+
+/* Pause button styling */
+.pause-button {
+    /* display: block; */
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #191919;
+    border: none;
+    border-radius: 5px;
+    color: #d6d6d6;
+    display: inline-block;
+}
+
+/* Both halves share these styles */
+.half {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sand element styles */
+.sand {
+    position: absolute;
+    width: 100%;
+    background: #f4c542;
+    /* Sand color */
+    bottom: 0;
+}
+
+/* Top sand starts full; we’ll animate its height down to 0 */
+.top-sand {
+    height: 100%;
+}
+
+/* Bottom sand starts empty; we’ll animate its height up to 100% */
+.bottom-sand {
+    height: 0%;
+}
+
+/* A thin element to simulate falling sand in the middle */
+.falling-sand {
+    position: absolute;
+    left: 50%;
+    top: calc(50%);
+    width: 4px;
+    height: 50%;
+    background: #f4c542;
+    transform: translate(-50%, -6%);
+    opacity: 0;
+}
+
+/* Keyframes for draining top sand */
+@keyframes drainTop {
+    from {
+        height: 100%;
+    }
+
+    to {
+        height: 0%;
+    }
+}
+
+/* Keyframes for filling bottom sand */
+@keyframes fillBottom {
+    from {
+        height: 0%;
+    }
+
+    to {
+        height: 100%;
+    }
+}
+
+/* Keyframes for a pulsing falling sand effect */
+@keyframes fallSand {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

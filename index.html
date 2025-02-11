@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="css/hourglass.css">
+  <link rel="stylesheet" href="css/hourglass_style.css">
+  <link rel="stylesheet" href="css/center_helper.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  
+</head>
+
+<body>
+
+  <button id="toggle-btn">☰</button>
+  <div id="sidebar" class="sidebar">
+
+    <!-- Move content below button -->
+    <br>
+    <br>
+
+    <label for="focus-time-input">Focus Time (minutes)</label>
+    <input type="number" id="focus-time-input" min="1" max="9999" placeholder="25" value = "25">
+    <div id="focus-time-error" class="error-message">Time must be greater than 0.</div>
+  
+    <label for="break-time-input">Break Time (minutes):</label>
+    <input type="number" id="break-time-input" min="1" max="9999" placeholder="5" value = "5">
+    <div id="break-time-error" class="error-message">Time must be greater than 0.</div>
+  
+    <!-- Checkbox 2 -->
+    <label class="checkbox-container">Long Breaks?
+      <input type="checkbox" id="lb-checkbox" checked="checked">
+      <span class="checkmark"></span>
+    </label>
+
+    <div id="lb-content" class="hidden-content">
+
+      <label for="lb-time-input">Long Break Time (minutes)</label>
+      <input type="number" id="lb-time-input" min="1" max="9999" placeholder="30" value="30">
+      <div id="lb-time-error" class="error-message">Quantity must be greater than 0.</div>
+
+      <label for="lb-count-input">Cycles between long break</label>
+      <input type="number" id="lb-count-input" min="1" max="9999" placeholder="4" value="4">
+      <div id="lb-count-error" class="error-message">Time must be greater than 0.</div>
+
+    </div>
+
+    <div id="schedule" style="overflow: auto; height: 40vh;"></div>
+
+  </div>
+  
+  <div class="container">
+    <div class="centered-div">
+
+      <div class="timer-display" id="modeDisplay"></div>
+      
+      <div class="hourglass" id="hourglass">
+        <!-- Top half with sand -->
+        <div class="top-half half"></div>
+        <!-- Bottom half with sand -->
+        <div class="bottom-half half"></div>
+        <!-- Top sand -->
+        <div class="top-half-b half">
+          <div class="sand top-sand" id="topSand"></div>
+        </div>
+        <!-- Bottom sand -->
+        <div class="bottom-half-b half">
+          <div class="sand bottom-sand" id="bottomSand"></div>
+        </div>
+        <!-- Falling sand -->
+        <div class="falling-sand" id="fallingSand"></div>
+      </div>
+    
+      <!-- Timer display below the hourglass -->
+      <div class="timer-display" id="timerDisplay"></div>
+      <span style="display: inline;">
+        <button class="pause-button" id="pauseButton">Pause</button>
+        <button class="pause-button" id="resetButton">Start</button>
+      </span>
+    </div>
+  </div>
+
+  <script src="js/timer.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/pomo.js"></script>
+</body>
+
+</html>
