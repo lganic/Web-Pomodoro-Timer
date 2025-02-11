@@ -52,7 +52,9 @@ function startHourglassTimer(duration) {
 
     clearInterval(timerInterval);
 
-    timer_duration = duration * (1 - .06); // To account for border
+    timer_duration = duration / (1 - 2 * .06); // To account for border
+
+    console.log('Adjusted duration ' + timer_duration);
 
     timeRemaining = duration;
     startTime = (performance.now() / 1000);
