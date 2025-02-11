@@ -52,7 +52,7 @@ function startHourglassTimer(duration) {
 
     clearInterval(timerInterval);
 
-    timer_duration = duration;
+    timer_duration = duration * (1 - .06); // To account for border
 
     timeRemaining = duration;
     startTime = (performance.now() / 1000);
@@ -113,9 +113,12 @@ function startHourglassTimer(duration) {
     void topSand.offsetWidth;
 
     // Start sand animations
-    topSand.style.animation = `drainTop ${duration}s linear forwards`;
-    bottomSand.style.animation = `fillBottom ${duration}s linear forwards`;
+    topSand.style.animation = `drainTop ${timer_duration}s linear forwards`;
+    bottomSand.style.animation = `fillBottom ${timer_duration}s linear forwards`;
     fallingSand.style.animation = `fallSand 0.5s linear infinite`;
+
+    topSand.style.animationDelay = `-${timer_duration * .06}s`;
+    bottomSand.style.animationDelay = `-${timer_duration * .06}s`;
 }
 
 // Pause button functionality
@@ -142,8 +145,8 @@ pauseButton.addEventListener('click', () => {
         bottomSand.style.animation = `fillBottom ${timer_duration}s linear forwards`;
         fallingSand.style.animation = `fallSand 0.5s linear infinite`;
 
-        // topSand.style.animationDelay = `0s`;
-        // bottomSand.style.animationDelay = `0s`;
+        topSand.style.animationDelay = `-${timer_duration * .06}s`;
+        bottomSand.style.animationDelay = `-${timer_duration * .06}s`;
 
     } else {
 
