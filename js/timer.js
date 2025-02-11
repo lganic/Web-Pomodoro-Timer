@@ -52,9 +52,10 @@ function startHourglassTimer(duration) {
 
     clearInterval(timerInterval);
 
-    timer_duration = duration / (1 - 2 * .06); // To account for border
+    isPaused = false;
+    pauseButton.textContent = 'Pause';
 
-    console.log('Adjusted duration ' + timer_duration);
+    timer_duration = duration / (1 - 2 * .06); // To account for border
 
     timeRemaining = duration;
     startTime = (performance.now() / 1000);
@@ -168,9 +169,6 @@ pauseButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
 
     pomo_sequence_index --;
-    isPaused = false;
-    pauseButton.textContent = 'Pause';
-
 
     resetButton.textContent = 'Reset';
 
