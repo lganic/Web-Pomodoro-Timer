@@ -166,6 +166,9 @@ pauseButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
 
     pomo_sequence_index --;
+    isPaused = false;
+    pauseButton.textContent = 'Pause';
+
 
     resetButton.textContent = 'Reset';
 
