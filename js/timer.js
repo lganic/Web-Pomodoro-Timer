@@ -13,6 +13,12 @@ var audio = new Audio('audio/piano.wav');
 const pauseButton = document.getElementById('pauseButton');
 const resetButton = document.getElementById('resetButton');
 
+const topSand = document.getElementById('topSand');
+const bottomSand = document.getElementById('bottomSand');
+const fallingSand = document.getElementById('fallingSand');
+const hourglass = document.getElementById('hourglass');
+const timerDisplay = document.getElementById('timerDisplay');
+
 function set_sand_color(color){
 
     document.getElementById('topSand').style.background = color;
@@ -43,11 +49,6 @@ function increment_and_start(){
 }
 
 function startHourglassTimer(duration) {
-    const topSand = document.getElementById('topSand');
-    const bottomSand = document.getElementById('bottomSand');
-    const fallingSand = document.getElementById('fallingSand');
-    const hourglass = document.getElementById('hourglass');
-    const timerDisplay = document.getElementById('timerDisplay');
 
     clearInterval(timerInterval);
 
