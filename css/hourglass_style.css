@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Font7';
-    src: url('/fonts/Seven Segment.ttf') format('truetype'); 
-    font-weight: bold; 
-    font-style: normal; 
+    src: url('/fonts/Seven Segment.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
 /* Container for the hourglass */
