@@ -17,4 +17,5 @@ body, html {
     border: 1px solid #d2d2d2;
     border-radius: 10px;
     padding: 0 10px;
+    min-width: 170px;
   }
