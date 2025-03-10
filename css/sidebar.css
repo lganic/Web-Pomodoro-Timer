@@ -15,6 +15,7 @@ body {
     overflow-x: hidden;
     transition: width 0.3s ease;
     padding-top: 20px;
+    z-index: 40;
 }
 
 .sidebar a {
