@@ -10,7 +10,7 @@ body, html {
     height: 100vh;           
   }
   .centered-div {
-    /* height: 70vh; */
+    height: calc(50vh + 148px);
     aspect-ratio: 1/2;
     background-color: rgb(33, 33, 33);
     text-align: center;
